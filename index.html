@@ -197,13 +197,29 @@
   .contact-detail-text a { color:var(--green); font-weight:600; }
   .contact-detail-text a:hover { text-decoration:underline; }
   .contact-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px; }
-  .gform-wrap { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 4px 30px rgba(0,0,0,0.06); }
-  .gform-header { padding:28px 32px 0; }
-  .gform-header h3 { font-size:1.5rem; font-weight:800; color:var(--text-dark); margin-bottom:6px; }
-  .gform-header p { font-size:0.88rem; color:var(--text-muted); margin-bottom:0; }
-  .gform-divider { height:1px; background:var(--cream-dark); margin:20px 32px 0; }
-  .gform-iframe-wrap { position:relative; }
-  .gform-iframe-wrap iframe { display:block; width:100%; border:none; background:var(--white); }
+  .enquiry-card { background:var(--white); border-radius:var(--radius-lg); padding:40px; box-shadow:0 4px 30px rgba(0,0,0,0.06); display:flex; flex-direction:column; gap:28px; }
+  .enquiry-card h3 { font-size:1.5rem; font-weight:800; color:var(--text-dark); margin-bottom:6px; }
+  .enquiry-card > p { font-size:0.95rem; color:var(--text-mid); line-height:1.7; }
+  .enquiry-steps { display:flex; flex-direction:column; gap:16px; }
+  .enquiry-step { display:flex; align-items:flex-start; gap:14px; }
+  .enquiry-step-num { width:32px; height:32px; border-radius:50%; background:var(--green-light); border:2px solid var(--green); display:flex; align-items:center; justify-content:center; font-family:'Baloo 2',cursive; font-weight:800; font-size:0.82rem; color:var(--green); flex-shrink:0; }
+  .enquiry-step-text strong { display:block; font-size:0.9rem; font-weight:700; color:var(--text-dark); margin-bottom:2px; }
+  .enquiry-step-text span { font-size:0.84rem; color:var(--text-muted); line-height:1.5; }
+  .enquiry-divider { height:1px; background:var(--cream-dark); }
+  .enquiry-cta-block { display:flex; flex-direction:column; gap:12px; }
+  .enquiry-main-btn { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px 28px; border-radius:100px; background:var(--green); color:var(--white); font-family:'Baloo 2',cursive; font-weight:700; font-size:1.05rem; transition:all 0.25s; border:none; cursor:pointer; text-align:center; }
+  .enquiry-main-btn:hover { background:var(--green-mid); transform:translateY(-2px); box-shadow:0 8px 24px rgba(27,94,59,0.28); }
+  .enquiry-main-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; flex-shrink:0; }
+  .enquiry-note { font-size:0.78rem; color:var(--text-muted); text-align:center; }
+  .enquiry-alt { display:flex; align-items:center; gap:12px; }
+  .enquiry-alt-line { flex:1; height:1px; background:var(--cream-dark); }
+  .enquiry-alt-label { font-size:0.78rem; color:var(--text-muted); white-space:nowrap; }
+  .enquiry-secondary-btns { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .enquiry-secondary-btn { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:100px; font-family:'Baloo 2',cursive; font-weight:600; font-size:0.88rem; transition:all 0.2s; text-align:center; border:2px solid; }
+  .enquiry-btn-wa { border-color:#25D366; color:#128C4A; background:transparent; }
+  .enquiry-btn-wa:hover { background:#25D366; color:var(--white); }
+  .enquiry-btn-call { border-color:var(--green); color:var(--green); background:transparent; }
+  .enquiry-btn-call:hover { background:var(--green); color:var(--white); }
   .map-container { margin-top:24px; border-radius:var(--radius-md); overflow:hidden; height:240px; }
   .map-container iframe { width:100%; height:100%; border:none; display:block; }
 
@@ -606,21 +622,62 @@
         </div>
       </div>
 
-      <!-- GOOGLE FORM: Replace YOUR_GOOGLE_FORM_EMBED_URL below.
-           To get it: open your Google Form → Send → Embed (</>) → copy the src URL only. -->
-      <div class="gform-wrap reveal reveal-delay-1">
-        <div class="gform-header">
-          <h3>Request More Information</h3>
-          <p>Fill in your details and we'll reach out within one business day.</p>
+      <!-- Replace YOUR_GOOGLE_FORM_URL with the shareable link from your Google Form (not the embed URL) -->
+      <div class="enquiry-card reveal reveal-delay-1">
+        <div>
+          <h3>Book a School Visit</h3>
+          <p>Takes 2 minutes. We respond within one business day, and you're welcome to call or WhatsApp us directly for a faster answer.</p>
         </div>
-        <div class="gform-divider"></div>
-        <div class="gform-iframe-wrap">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSe7SwFrFXXLVBzWKECFQKfchkUpzBhitCSEwDfWXFn_0rsglA/viewform?embedded=true"
-            height="720"
-            title="Anandi Gopal Admissions Enquiry Form"
-            loading="lazy"
-          >Loading form…</iframe>
+
+        <div class="enquiry-steps">
+          <div class="enquiry-step">
+            <div class="enquiry-step-num">1</div>
+            <div class="enquiry-step-text">
+              <strong>Fill in the short form</strong>
+              <span>Opens in a new tab. Tell us your child's name, age, and which program interests you.</span>
+            </div>
+          </div>
+          <div class="enquiry-step">
+            <div class="enquiry-step-num">2</div>
+            <div class="enquiry-step-text">
+              <strong>We get notified instantly</strong>
+              <span>Every submission goes directly to our inbox and response sheet — no delays.</span>
+            </div>
+          </div>
+          <div class="enquiry-step">
+            <div class="enquiry-step-num">3</div>
+            <div class="enquiry-step-text">
+              <strong>We call you to schedule a visit</strong>
+              <span>Come see the classrooms, meet the team, and let your child explore.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="enquiry-divider"></div>
+
+        <div class="enquiry-cta-block">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7SwFrFXXLVBzWKECFQKfchkUpzBhitCSEwDfWXFn_0rsglA/viewform?embedded=true" target="_blank" rel="noopener" class="enquiry-main-btn">
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Open Enquiry Form
+          </a>
+          <p class="enquiry-note">Opens Google Forms in a new tab — no login required</p>
+
+          <div class="enquiry-alt">
+            <div class="enquiry-alt-line"></div>
+            <span class="enquiry-alt-label">or reach us directly</span>
+            <div class="enquiry-alt-line"></div>
+          </div>
+
+          <div class="enquiry-secondary-btns">
+            <a href="https://wa.me/919820534880?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Anandi%20Gopal%20Playschool" target="_blank" rel="noopener" class="enquiry-secondary-btn enquiry-btn-wa">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="tel:+919820534880" class="enquiry-secondary-btn enquiry-btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+              Call Now
+            </a>
+          </div>
         </div>
       </div>
     </div>
